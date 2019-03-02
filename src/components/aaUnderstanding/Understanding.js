@@ -40,7 +40,7 @@ class Understanding extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Understanding?</label>
                     <br />
-                    <input onChange={this.handleChange} placeholder="name" type='text' />
+                    <input onChange={this.handleChange} placeholder="scale of 1-5" type='text' />
                     <br />
                     <input type="submit" value="Next" />
                 </form>

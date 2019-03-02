@@ -38,7 +38,7 @@ class Feeling extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Feeling?</label>
                     <br/>
-                    <input onChange={this.handleChange} placeholder="name" type='text' value= {this.state.feelings} />
+                    <input onChange={this.handleChange} placeholder="scale of 1-5" type='text' value= {this.state.feelings} />
                     <br />
                     <input type="submit" value="Next" />
                 </form>

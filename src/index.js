@@ -19,22 +19,22 @@ const firstReducer = (state = reduxState, action) => {
    else if (action.type === 'SET_UNDERSTANDING') {
         return { ...state, understanding: action.payload };
     }
+    else if (action.type === 'SET_SUPPORT') {
+        return { ...state, support: action.payload };
+    }
+    else if (action.type === 'SET_COMMENT') {
+        return { ...state, comment: action.payload };
+    }
    return state;
 }
-// const secondReducer = (state = [], action) => {
-//     console.log(action.payload);
-//     if (action.type === 'SET_UNDERSTANDING') {
-//         return action.payload;
-//     }
-//     return state;
-// }
+
 
 
 
 const storeInstance = createStore(
     combineReducers({
      firstReducer, 
-    //  secondReducer,
+   
     }),
     applyMiddleware(logger),
 );

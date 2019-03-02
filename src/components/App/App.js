@@ -40,8 +40,8 @@ class App extends Component {
         <div>
           <h3>Feelings: {this.props.firstReducer.feelings}</h3>
           <h3>Understanding: {this.props.firstReducer.understanding}</h3>
-          <h3>Support: 0</h3>
-          <h3>Comments: You got this!</h3>
+          <h3>Support: {this.props.firstReducer.support}</h3>
+          <h3>Comments: {this.props.firstReducer.comment}</h3>
         </div>
      
      
