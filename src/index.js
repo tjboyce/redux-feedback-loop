@@ -25,19 +25,16 @@ const firstReducer = (state = reduxState, action) => {
     else if (action.type === 'SET_COMMENT') {
         return { ...state, comment: action.payload };
     }
-    else if (action.type === 'SUBMIT_CLICK'){
-        return state; 
-    }
     return state; 
 }
 
-// const submit = (state = reduxState, action )=>{
-//     console.log(action.payload);
-//     if (action.type === 'SUBMIT_CLICK'){
-//         return { ...state, feelings: action.payload, understanding: action.payload, support: action.payload, comment: action.payload}
-//     }
-//     return state; 
-// }
+const submit = (state = [], action )=>{
+    console.log(action.payload);
+    if (action.type === 'SET_SUBMIT'){
+        return action.payload;
+    }
+    return state; 
+}
 
 
 
@@ -45,7 +42,7 @@ const firstReducer = (state = reduxState, action) => {
 const storeInstance = createStore(
     combineReducers({
      firstReducer, 
-    // submit, 
+     submit, 
     }),
     applyMiddleware(logger),
 );

@@ -1,21 +1,24 @@
 // import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import axios from 'axios';
+// import ReviewList from '../aotReviewList/ReviewList';
 
 class Review extends Component {
-    state = {
-        feelings: '',
-        understanding: '',
-        support: '',
-        comment: '',
-    }
 
-    handleClick = ()=>{
-        console.log(this.state);
-        
-        this.props.dispatch({
-            type: 'SUBMIT_CLICK', payload: this.state.feelings })
-    }
+
+    // handleClick = (event) => {
+    //     axios({
+    //         method: 'POST',
+    //         url: '/review',
+    //         data: this.props.firstReducer,
+    //     }).then((response) => {
+    //         this.props.history.push('/reviewList')
+    //     }).catch((error) => {
+    //         alert('something went wrong with your POST')
+    //     })
+
+    // }
 
 
 
@@ -28,9 +31,14 @@ class Review extends Component {
 
                 <h1>Review Your Feedback</h1>
                 <br />
-                
+                <div>
+                    {this.props.firstReducer.feelings}
+                    {this.props.firstReducer.understanding}
+                    {this.props.firstReducer.support}
+                    {this.props.firstReducer.comment}
+                </div>
                 <br />
-                <button onClick = {this.handleClick}>Submit Feedback</button>
+                <button onClick={this.handleClick}>Submit Feedback</button>
             </div>
         );
     }
