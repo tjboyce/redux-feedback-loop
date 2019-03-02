@@ -23,7 +23,7 @@ class Comment extends Component {
         this.setState({
             comment: '',
         })
-        // this.props.history.push('/support');
+        this.props.history.push('/review');
     }
 
 

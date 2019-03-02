@@ -9,6 +9,7 @@ import Feeling from '../aaaFeeling/Feeling.js';
 import Understanding from '../aaUnderstanding/Understanding';
 import Support from '../aoSupport/Support';
 import Comment from '../aotComment/Comment';
+import Review from '../aotReview/Review';
 
 
 
@@ -29,12 +30,13 @@ class App extends Component {
             <Route exact path="/understanding" component={Understanding} />
             <Route path="/support" component={Support} />
             <Route path="/comment" component={Comment} />
+            <Route path="/review" component={Review} />
 
           </div>
         </Router>  
         <br/>
         <div>
-          <h1>Review Your Feedback</h1>
+       
         </div>
 
         <div>
