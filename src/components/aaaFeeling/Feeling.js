@@ -19,14 +19,15 @@ class Feeling extends Component {
             })
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         const action = { type: 'SET_FEELINGS', payload: this.state.feelings }
         this.props.dispatch (action);
         //clear 
         this.setState({
             feelings: '',
         })
-    //    this.props.history.push ('uderstanding');
+       this.props.history.push ('/understanding');
     }
 
     render() {
@@ -37,13 +38,13 @@ class Feeling extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Feeling?</label>
                     <br/>
-                    <input onChange={this.handleChange} placeholder="name" type='text' />
+                    <input onChange={this.handleChange} placeholder="name" type='text' value= {this.state.feelings} />
                     <br />
                     <input type="submit" value="Next" />
                 </form>
 
                 <br/>
-                <div>
+                {/* <div>
                     <h1>Review Your Feedback</h1>
                 </div>
                
@@ -52,7 +53,7 @@ class Feeling extends Component {
                     <h3>Understanding: 0</h3>
                     <h3>Support: 0</h3>
                     <h3>Comments: You got this!</h3>
-                </div>
+                </div> */}
                
                 <br />
             </div>

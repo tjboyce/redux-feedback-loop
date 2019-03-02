@@ -9,21 +9,32 @@ import { Provider } from 'react-redux';
 
 import registerServiceWorker from './registerServiceWorker';
 
-const firstReducer = (state = [], action) => {
+const reduxState = {feelings: '', understanding: '', support: '', comment: ''};
+
+const firstReducer = (state = reduxState, action) => {
     console.log(action.payload);
     if (action.type === 'SET_FEELINGS'){
-        return action.payload
+        return {...state, feelings: action.payload};
     }
-   
-    return state;
+   else if (action.type === 'SET_UNDERSTANDING') {
+        return { ...state, understanding: action.payload };
+    }
+   return state;
 }
-
+// const secondReducer = (state = [], action) => {
+//     console.log(action.payload);
+//     if (action.type === 'SET_UNDERSTANDING') {
+//         return action.payload;
+//     }
+//     return state;
+// }
 
 
 
 const storeInstance = createStore(
     combineReducers({
      firstReducer, 
+    //  secondReducer,
     }),
     applyMiddleware(logger),
 );
