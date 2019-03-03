@@ -1,6 +1,7 @@
 // import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Review from '../aotReview/Review'
 
 class Support extends Component {
     state = {
@@ -47,6 +48,13 @@ class Support extends Component {
 
                 <br />
                 <br />
+                <div>
+                    <Review />
+                    {/* <h3>Feelings: {this.props.firstReducer.feelings}</h3>
+                    <h3>Understanding: {this.props.firstReducer.understanding}</h3>
+                    <h3>Support: </h3>
+                    <h3>Comments: </h3> */}
+                </div>
             </div>
         );
     }

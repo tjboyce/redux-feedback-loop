@@ -9,13 +9,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 // /** ---------- EXPRESS ROUTES ---------- **/
-// app.post('/review', (req, res) => {
-//     res.sendStatus(201);
-// })
-// router.get('/review', (req, res) => {
-//         res.send(result.rows);
-    
-// })
+const resultsRouter = require('./router/results.router.js');
+app.use('/review', resultsRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

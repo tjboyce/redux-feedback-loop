@@ -10,6 +10,8 @@ import Understanding from '../aaUnderstanding/Understanding';
 import Support from '../aoSupport/Support';
 import Comment from '../aotComment/Comment';
 import Review from '../aotReview/Review';
+import Success from '../Success/Success';
+import Admin from '../Admin/Admin';
 // import ReviewList from '../aotReviewList/ReviewList';
 
 
@@ -31,7 +33,8 @@ class App extends Component {
             <Route path="/support" component={Support} />
             <Route path="/comment" component={Comment} />
             <Route path="/review" component={Review} />
-
+            <Route path ="/success" component = {Success}/>
+            <Route path="/admin" component={Admin} />
           </div>
         </Router>  
         <br/>
@@ -39,12 +42,12 @@ class App extends Component {
        
         </div>
 
-        <div>
+        {/* <div>
           <h3>Feelings: {this.props.firstReducer.feelings}</h3>
           <h3>Understanding: {this.props.firstReducer.understanding}</h3>
           <h3>Support: {this.props.firstReducer.support}</h3>
           <h3>Comments: {this.props.firstReducer.comment}</h3>
-        </div>
+        </div> */}
      
      
      </div>

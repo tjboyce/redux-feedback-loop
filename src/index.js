@@ -25,6 +25,9 @@ const firstReducer = (state = reduxState, action) => {
     else if (action.type === 'SET_COMMENT') {
         return { ...state, comment: action.payload };
     }
+    else if (action.type === 'CLEAR_STATE'){
+        return reduxState;
+    }
     return state; 
 }
 

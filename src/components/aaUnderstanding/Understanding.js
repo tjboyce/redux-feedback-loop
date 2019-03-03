@@ -1,6 +1,7 @@
 // import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Review from '../aotReview/Review'
 
 class Understanding extends Component {
     state = {
@@ -44,8 +45,12 @@ class Understanding extends Component {
                     <br />
                     <input type="submit" value="Next" />
                 </form>
+            
 
                 <br />
+                <div>
+                    <Review />
+                </div>
                 <br />
             </div>
         );

@@ -1,6 +1,7 @@
 // import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Review from '../aotReview/Review';
 
 
 
@@ -44,16 +45,9 @@ class Feeling extends Component {
                 </form>
 
                 <br/>
-                {/* <div>
-                    <h1>Review Your Feedback</h1>
-                </div>
-               
                 <div>
-                    <h3>Feelings: {this.props.firstReducer}</h3>
-                    <h3>Understanding: 0</h3>
-                    <h3>Support: 0</h3>
-                    <h3>Comments: You got this!</h3>
-                </div> */}
+                    <Review />
+                </div>
                
                 <br />
             </div>
