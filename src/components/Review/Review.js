@@ -26,15 +26,12 @@ class Review extends Component {
 
     render() {
         let button = '';
-        if (this.props.firstReducer.feelings !== '' && this.props.firstReducer.understanding !== '' && this.props.firstReducer.support !== '' && this.props.firstReducer.comment !==''){
-                button = <button onClick={this.handleClick}>Submit Feedback</button>
+        if (this.props.firstReducer.feelings !== '' && this.props.firstReducer.understanding !== '' && this.props.firstReducer.support !== '' && this.props.firstReducer.comment !== '') {
+            button = <button onClick={this.handleClick}>Submit Feedback</button>
         }
         else {
             button = <button disabled>Incomplete</button>
         }
-        
-
-
 
         return (
             <div className="App">

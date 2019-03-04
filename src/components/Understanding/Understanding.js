@@ -1,30 +1,29 @@
-// import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Review from '../aotReview/Review'
+import Review from '../Review/Review'
 
-class Comment extends Component {
+class Understanding extends Component {
     state = {
-        comment: '',
+        understanding: '',
     }
 
     handleChange = (event) => {
-        console.log('comment handleChange', event);
+        console.log('feelings handleChange', event);
 
         this.setState({
-            comment: event.target.value,
+            understanding: event.target.value,
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const action = { type: 'SET_COMMENT', payload: this.state.comment }
+        const action = { type: 'SET_UNDERSTANDING', payload: this.state.understanding }
         this.props.dispatch(action);
         //clear 
         this.setState({
-            comment: '',
+            understanding: '',
         })
-        this.props.history.push('/review');
+           this.props.history.push ('/support');
     }
 
 
@@ -34,17 +33,18 @@ class Comment extends Component {
     render() {
         return (
             <div className="App">
-
-
-                <h1>Any comments you want to leave?</h1>
+              
+              
+                <h1>How well do you understand the content?</h1>
 
                 <form onSubmit={this.handleSubmit}>
-                    <label>Comments</label>
+                    <label>Understanding?</label>
                     <br />
-                    <input onChange={this.handleChange} placeholder="Leave comments here" type='text' />
+                    <input onChange={this.handleChange} placeholder="scale of 1-5" type='text' />
                     <br />
                     <input type="submit" value="Next" />
                 </form>
+            
 
                 <br />
                 <div>
@@ -60,5 +60,4 @@ const mapReduxStateToProps = (reduxState) => {
     return reduxState;
 }
 
-export default connect(mapReduxStateToProps)(Comment);
-
+export default connect(mapReduxStateToProps)(Understanding);

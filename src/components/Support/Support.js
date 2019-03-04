@@ -1,11 +1,10 @@
-// import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Review from '../aotReview/Review'
+import Review from '../Review/Review'
 
 class Support extends Component {
     state = {
-       support: '',
+        support: '',
     }
 
     handleChange = (event) => {
@@ -20,7 +19,7 @@ class Support extends Component {
         event.preventDefault()
         const action = { type: 'SET_SUPPORT', payload: this.state.support }
         this.props.dispatch(action);
-        //clear 
+       
         this.setState({
             support: '',
         })
@@ -34,8 +33,6 @@ class Support extends Component {
     render() {
         return (
             <div className="App">
-
-
                 <h1>How well are you being Supported?</h1>
 
                 <form onSubmit={this.handleSubmit}>
@@ -45,12 +42,10 @@ class Support extends Component {
                     <br />
                     <input type="submit" value="Next" />
                 </form>
-
                 <br />
                 <br />
                 <div>
                     <Review />
-                   
                 </div>
             </div>
         );

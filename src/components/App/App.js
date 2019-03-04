@@ -4,24 +4,19 @@ import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Header from '../Header/Header.js';
-import Feeling from '../aaaFeeling/Feeling.js';
-import Understanding from '../aaUnderstanding/Understanding';
-import Support from '../aoSupport/Support';
-import Comment from '../aotComment/Comment';
-import Review from '../aotReview/Review';
+import Feeling from '../Feeling/Feeling.js';
+import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
+import Comment from '../Comment/Comment';
+import Review from '../Review/Review';
 import Success from '../Success/Success';
 import Admin from '../Admin/Admin';
-// import ReviewList from '../aotReviewList/ReviewList';
-
-
-
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
-        
         
         <Router>
           <div>
@@ -35,17 +30,6 @@ class App extends Component {
           </div>
         </Router>  
         <br/>
-        <div>
-       
-        </div>
-
-        {/* <div>
-          <h3>Feelings: {this.props.firstReducer.feelings}</h3>
-          <h3>Understanding: {this.props.firstReducer.understanding}</h3>
-          <h3>Support: {this.props.firstReducer.support}</h3>
-          <h3>Comments: {this.props.firstReducer.comment}</h3>
-        </div> */}
-     
      
      </div>
     );
