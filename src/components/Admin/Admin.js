@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Admin extends Component {
-        state = {
-            review: [],
-        }
-    
-    componentDidMount(){
+    state = {
+        review: [],
+    }
+
+    componentDidMount() {
         this.getReview();
     }
 
@@ -14,7 +14,7 @@ class Admin extends Component {
         axios({
             method: 'GET',
             url: '/review',
-           }).then((response) => {
+        }).then((response) => {
             this.setState({
                 review: response.data,
             })
@@ -23,33 +23,34 @@ class Admin extends Component {
         })
 
     }
-    adminItems (){
-         return this.state.review.map (review =>
-            <tr key= {review.id}>
-            <td>{review.id}</td>
-            <td>{review.feeling}</td>
-            <td>{review.understanding}</td>
-            <td>{review.support}</td>
-            <td>{review.comments}</td>
-             <td><button>Delete</button></td>
+    adminItems() {
+        return this.state.review.map(review =>
+            <tr key={review.id}>
+                <td>{review.id}</td>
+                <td>{review.feeling}</td>
+                <td>{review.understanding}</td>
+                <td>{review.support}</td>
+                <td>{review.comments}</td>
+                <td><button onClick={() => this.deleteFeedback(review.id)} className="removeButton">Remove</button></td>
             </tr>
         )
     }
 
-    deleteFeedback = (event) =>{
+    deleteFeedback = (reviewId) => {
+
         axios({
-            method: 'GET',
-            url: '/delete',
-        }).then((response) => {
-            this.setState({
-                results: response.data
-            });
-        }).catch((error) => {
-            alert('could not get results');
-            console.log('could not get results', error);
+            method: 'DELETE',
+            url: '/review/' + reviewId
+        }).then(() => {
+            this.getReview();
         })
     }
-    
+
+    onSubmit = () => {
+        this.props.history.push('/');
+    }
+
+
 
 
 
@@ -57,36 +58,31 @@ class Admin extends Component {
 
     render() {
         return (
-            <div className="App">
-                <h1>Welcome to the Admin Page</h1>
-                <br></br>
+            <>
+                <header> <button onClick={this.onSubmit}>Home</button></header>
+
                 <div className="App">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Feeling</th>
-                                <th>Understanding</th>
-                                <th>Support</th>
-                                <th>Comments</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.adminItems()}
-                        </tbody>
-
-                    </table>
-
-                    <button onClick={this.onSubmit}>Home</button>
-
+                    <h1>Welcome to the Admin Page</h1>
+                    <br></br>
+                    <div className="App">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Feeling</th>
+                                    <th>Understanding</th>
+                                    <th>Support</th>
+                                    <th>Comments</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.adminItems()}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-        );
-                        
-            
-                
-            </div>
+            </>
         );
     }
 }
