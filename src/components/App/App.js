@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
@@ -26,15 +25,13 @@ class App extends Component {
         
         <Router>
           <div>
-           
             <Route exact path="/" component={Feeling} />
-            {/* <Route path="/feeling" component={Feeling} /> */}
             <Route exact path="/understanding" component={Understanding} />
             <Route path="/support" component={Support} />
             <Route path="/comment" component={Comment} />
             <Route path="/review" component={Review} />
             <Route path ="/success" component = {Success}/>
-            <Route path="/admin" component={Admin} />
+            <Route path="/admin" component={Admin} />            
           </div>
         </Router>  
         <br/>

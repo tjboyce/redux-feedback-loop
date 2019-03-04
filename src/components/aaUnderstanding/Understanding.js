@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Review from '../aotReview/Review'
@@ -16,8 +15,8 @@ class Understanding extends Component {
         })
     }
 
-    handleSubmit = () => {
-        
+    handleSubmit = (event) => {
+        event.preventDefault();
         const action = { type: 'SET_UNDERSTANDING', payload: this.state.understanding }
         this.props.dispatch(action);
         //clear 

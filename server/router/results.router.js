@@ -19,8 +19,20 @@ router.post('/', (req, res) => {
             res.sendStatus(201)
         }).catch((error => {
             res.sendStatus(500);
-            console.log('error in post, error: ', error);
+            console.log('error in post', error);
         }))
 })
+
+router.delete('/:id', (req, res) => {
+    console.log('server delete hit');
+    console.log('req.params', req.params);
+    pool.query(`DELETE FROM "feedback" WHERE "id"=$1;`, [req.params.id])
+        .then(() => {
+            res.sendStatus(201);
+        }).catch(error => {
+            console.log('error in delete', error);
+            res.sendStatus(500);
+        });
+});
 
 module.exports = router;

@@ -16,8 +16,8 @@ class Comment extends Component {
         })
     }
 
-    handleSubmit = () => {
-        // event.preventDefault()
+    handleSubmit = (event) => {
+        event.preventDefault();
         const action = { type: 'SET_COMMENT', payload: this.state.comment }
         this.props.dispatch(action);
         //clear 

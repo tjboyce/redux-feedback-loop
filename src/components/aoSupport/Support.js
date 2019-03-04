@@ -16,8 +16,8 @@ class Support extends Component {
         })
     }
 
-    handleSubmit = () => {
-        // event.preventDefault()
+    handleSubmit = (event) => {
+        event.preventDefault()
         const action = { type: 'SET_SUPPORT', payload: this.state.support }
         this.props.dispatch(action);
         //clear 
@@ -50,10 +50,7 @@ class Support extends Component {
                 <br />
                 <div>
                     <Review />
-                    {/* <h3>Feelings: {this.props.firstReducer.feelings}</h3>
-                    <h3>Understanding: {this.props.firstReducer.understanding}</h3>
-                    <h3>Support: </h3>
-                    <h3>Comments: </h3> */}
+                   
                 </div>
             </div>
         );

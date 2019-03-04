@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
@@ -8,6 +7,7 @@ class Review extends Component {
 
 
     handleClick = (event) => {
+        event.preventDefault()
         axios({
             method: 'POST',
             url: '/review',
