@@ -17,7 +17,7 @@ class Understanding extends Component {
     }
 
     handleSubmit = () => {
-        // event.preventDefault()
+        
         const action = { type: 'SET_UNDERSTANDING', payload: this.state.understanding }
         this.props.dispatch(action);
         //clear 

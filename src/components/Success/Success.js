@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 class Success extends Component {
 
     handleClick = ()=>{
+      
         this.props.history.push('/');
         this.props.dispatch({type: 'CLEAR_STATE'})
     }

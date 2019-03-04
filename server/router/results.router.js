@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
             res.sendStatus(201)
         }).catch((error => {
             res.sendStatus(500);
-            console.log('error in post, error: ' + error);
+            console.log('error in post, error: ', error);
         }))
 })
 
